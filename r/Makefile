@@ -1,0 +1,2 @@
+chmod:
+	chmod a+x *
