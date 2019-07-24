@@ -10,7 +10,7 @@ shopt -s checkwinsize
 [ -r "/etc/bashrc_$TERM_PROGRAM" ] && . "/etc/bashrc_$TERM_PROGRAM"
 
 
-alias bashrc="sudo nano /private/etc/bashrc"
+alias bashrc="sudo nano /private/etc/bashrc && source /private/etc/bashrc"
 
 # some more ls aliases
 alias ll='ls -alh'
@@ -56,14 +56,25 @@ up(){
 }
 
 alias micro="~/micro"
+alias julia="/Applications/Julia-0.6.app/Contents/Resources/julia/bin/julia"
 alias sl=ls
 alias s=ls
 alias dir="ls -1"
 alias clr=clear
 alias lisp="clisp -q"
 alias react="elm reactor"
+
+#function assemble() {
+#	nasm -f elf $1;
+#	y=$(basename $1 .asm);
+#	ld -s -o $y "$y.o";
+#	rm "$y.o"; 
+#}
+
 alias count="ls -1 | wc -l"
 alias jjs=jrunscript
+alias alg=a68g
+alias open_port="~/OnlineInterview/go/open_port"
 alias m=micro
 alias python=python2.7
 export CLICOLOR=1
@@ -84,5 +95,11 @@ function tilef(){
 
 alias tile=tilef
 alias n=nano
-alias julia="/Applications/Julia-1.0.app/Contents/Resources/julia/bin/julia"
-alias cdc="ssh team2fs.team2.isucdc.com"
+
+function addextention(){
+    for f in $1; 
+    do mv $f `basename $f `$2; 
+    done;
+}
+
+alias basic="~/basic"
